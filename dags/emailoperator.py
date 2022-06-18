@@ -6,17 +6,17 @@ from airflow.operators.python_operator import PythonOperator
 from airflow.operators.email_operator import EmailOperator
 
 default_args = {
-         'owner': 'airflow',    
-         'start_date': airflow.utils.dates.days_ago(2),
-         'end_date': datetime(),
-         'depends_on_past': False,
-         'email': ['smelukote2024@gmail.com'],
-         'email_on_failure': False,
-         'email_on_retry': False,
-        # If a task fails, retry it once after waiting
-        # at least 5 minutes
-         'retries': 1,
-         'retry_delay': timedelta(minutes=5),
+          'owner': 'airflow',    
+         # 'start_date': airflow.utils.dates.days_ago(2),
+         # 'end_date': datetime(),
+         # 'depends_on_past': False,
+         # 'email': ['smelukote2024@gmail.com'],
+         # 'email_on_failure': False,
+         # 'email_on_retry': False,
+         # If a task fails, retry it once after waiting
+         # at least 5 minutes
+         # 'retries': 1,
+         #'retry_delay': timedelta(minutes=5),
          }  
 
 dag_email = DAG(

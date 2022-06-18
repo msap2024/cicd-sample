@@ -24,9 +24,9 @@ YESTERDAY = datetime.datetime.now() - datetime.timedelta(days=1)
 default_args = {
     "owner": "Composer Example",
     "depends_on_past": False,
-    "email": [""],
-    "email_on_failure": False,
-    "email_on_retry": False,
+    "email": ["smelukote2024@gmail.com"],
+    "email_on_failure": True,
+    "email_on_retry": True,
     "retries": 1,
     "retry_delay": datetime.timedelta(minutes=5),
     "start_date": YESTERDAY,

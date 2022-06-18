@@ -6,18 +6,18 @@ from airflow.operators.python_operator import PythonOperator
 from airflow.operators.email_operator import EmailOperator
 
 default_args = {
-        'owner': 'airflow',    
-        #'start_date': airflow.utils.dates.days_ago(2),
-        # 'end_date': datetime(),
-        # 'depends_on_past': False,
-        # 'email': ['airflow@example.com'],
-        # 'email_on_failure': False,
-        #'email_on_retry': False,
+         'owner': 'airflow',    
+         'start_date': airflow.utils.dates.days_ago(2),
+         'end_date': datetime(),
+         'depends_on_past': False,
+         'email': ['smelukote2024@gmail.com'],
+         'email_on_failure': False,
+         'email_on_retry': False,
         # If a task fails, retry it once after waiting
         # at least 5 minutes
-        #'retries': 1,
-        'retry_delay': timedelta(minutes=5),
-        }  
+         'retries': 1,
+         'retry_delay': timedelta(minutes=5),
+         }  
 
 dag_email = DAG(
     dag_id = 'emailoperator_demo',
@@ -37,7 +37,7 @@ start_task = PythonOperator(
     
 send_email = EmailOperator(
     task_id='send_email',
-    to='vamshikrishnapamucv@gmail.com',
+    to='smelukote2024@gmail.com',
     subject='ingestion complete',
     html_content="Date: {{ ds }}",
     dag=dag_email)
